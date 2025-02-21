@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bundle & Save</title>   
+</head>
+<body>
+    <div class="bundle-container">
+        <div class="lined-text">
+            <span class="line"></span>
+            Bundle & Save
+            <span class="line"></span>
+          </div>
+        <div class="bundle-option" onclick="selectBundle(1, 195)">
+            <input type="radio" name="bundle" value="1">
+            <div class="bundle-info">
+                <span>1 Pair<br> DKK 195.00</span>
+                <span class="discount-label">50% OFF</span>
+            </div>
+        </div>
+        <div class="bundle-option selected" onclick="selectBundle(2, 345)">
+            <input type="radio" name="bundle" value="2" checked>
+            <div class="bundle-info">
+                <span>2 Pair<br>DKK 345.00</span>
+                <span><strike>DKK 528.00</strike></span> 
+               
+                <span class="discount-label">Most Popular<br>40% OFF</span>
+            </div>
+
+            <div class="color">
+                <label>Size</label>
+                <label style="margin-right: 30px;">Color</label>
+            </div>
+            <div class="size-color">
+                <div>
+                    #1
+                </div>
+                <select><option>S</option><option>M</option><option>L</option></select>
+                <select><option>Colour</option><option>Blue</option><option>Pink</option></select>
+            </div>
+            <div class="size-color">
+             <div>
+                #2
+             </div>  
+                <select><option>S</option><option>M</option><option>L</option></select>
+                <select><option>Colour</option><option>Blue</option><option>Pink</option></select>
+                
+            </div>
+        </div>
+        <div class="bundle-option" onclick="selectBundle(3, 528)">
+            <input type="radio" name="bundle" value="3">
+            <div class="bundle-info">
+                <span>3 Pair<br>DKK 528.00</span>
+               
+                <span class="discount-label">60% OFF</span>
+            </div>
+        </div>
+        <div class="total-container">
+            <span>Free 2 Day Shipping</span>
+            <span class="total-price">Total: DKK <span id="total">345</span>.00</span>
+        </div>
+        <button>+ Add to Cart</button>
+    </div>
+ 
+    <script>
+        function selectBundle(pairs, price) {
+            document.querySelectorAll('.bundle-option').forEach(option => option.classList.remove('selected'));
+            event.currentTarget.classList.add('selected');
+            document.getElementById('total').innerText = price;
+        }
+    </script>
+</body>
+</html>
+has context menu
